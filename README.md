@@ -18,7 +18,7 @@ Optionally mount a custom sshd config at `/etc/ssh/`.
 ## Usage Example
 ### docker-compose file for connecting to remote server
 ```
-caddy:
+tunnel:
   image: daocloud.io/quiz42/dao-tunnel
   environment:
   - REMOTE_SRV=quiz@devop.heartlves.com
