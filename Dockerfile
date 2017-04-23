@@ -11,12 +11,14 @@ RUN apk update && \
     cp -a /etc/ssh /etc/ssh.cache && \
     rm -rf /var/cache/apk/*
 
-EXPOSE 2222
+# No need to expose ports when using as a tunnel
+#EXPOSE 2222
 
 COPY entry.sh /entry.sh
 
 ENTRYPOINT ["/entry.sh"]
 
 #CMD ["/usr/sbin/sshd", "-D", "-f", "/etc/ssh/sshd_config"]
-#ssh -N -R 8070:localhost:8070 quiz@devop.heartleaves.com
+
+# ssh -N -R 8070:localhost:8070 quiz@devop.heartleaves.com
 CMD ["/usr/bin/ssh", "-N", "-R", "8070:localhost:8070" "quiz@devop.heartleaves.com"]
