@@ -21,7 +21,7 @@ Optionally mount a custom sshd config at `/etc/ssh/`.
 tunnel:
   image: daocloud.io/quiz42/dao-tunnel
   environment:
-  - REMOTE_SRV=quiz@devop.heartlves.com
+  - REMOTE_SRV=quiz@devop.heartleaves.com
   volumes:
   - /etc/ssh/dao/id_rsa.pub:/root/.ssh/authorized_keys
   - /etc/ssh/dao/password.txt:/root/.ssh/password.txt
