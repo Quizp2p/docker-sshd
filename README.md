@@ -12,7 +12,8 @@
 tunnel:
   image: daocloud.io/quiz42/dao-tunnel
   environment:
-  - REMOTE_SRV=quiz@devop.heartleaves.com
+  - SSH_SRV=quiz@devop.heartleaves.com
+  - SSH_PORT=2222
   - REMOTE_PORT=8070
   - LOCAL_PORT=8070
   volumes:
