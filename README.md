@@ -14,14 +14,12 @@ Optionally mount a custom sshd config at `/etc/ssh/`.
 
 - `SSH_USERS` list of user accounts and uids/gids to create. eg `SSH_USERS=www:48:48,admin:1000:1000`
 - `MOTD` change the login message
-- `REMOTE_SRV` set the remote server to connect to
+
 ## Usage Example
 ### docker-compose file for connecting to remote server
 ```
-tunnel:
-  image: daocloud.io/quiz42/dao-tunnel
-  environment:
-  - REMOTE_SRV=quiz@devop.heartleaves.com
+tunnel-door:
+  image: daocloud.io/quiz42/dao-tunnel-door
   volumes:
   - /etc/ssh/dao/id_rsa.pub:/root/.ssh/authorized_keys
   - /etc/ssh/dao/password.txt:/root/.ssh/password.txt
