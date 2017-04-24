@@ -22,7 +22,6 @@ tunnel-door:
   image: daocloud.io/quiz42/dao-tunnel-door
   volumes:
   - /etc/ssh/dao/id_rsa.pub:/root/.ssh/authorized_keys
-  - /etc/ssh/dao/password.txt:/root/.ssh/password.txt
   net: host
 ```
 or
