@@ -58,9 +58,6 @@ if [ -v MOTD ]; then
     echo -e "$MOTD" > /etc/motd
 fi
 
-# Generate private key and copy it to server
-echo -e 'y/n'|ssh-keygen -t rsa -N "" -f /root/.ssh/id_rsa -q
-sshpass -f /root/.ssh/password.txt ssh-copy-id -o StrictHostKeyChecking=no $REMOTE_SRV
 
 stop() {
     echo "Received SIGINT or SIGTERM. Shutting down $DAEMON"
